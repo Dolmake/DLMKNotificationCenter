@@ -24,37 +24,37 @@ All the observers have to match the interface: *INotificable*, and then subscrib
 
 ## Notifications
 
-* The name of the notification.
-**public string Name { get; private set; }**
+*The name of the notification:*
+public string Name { get; private set; }
 
-* The invoker. By default is NULL.
-**public object Sender { get; private set; }**
+*The invoker. By default is NULL:*
+public object Sender { get; private set; }
 
-* The data. By default is NULL.
-**public Dictionary<string, object> UserInfo { get; private set; }**
+*The data. By default is NULL:*
+public Dictionary<string, object> UserInfo { get; private set; }
 
-* The notification Queue ID. 
-**public string QueueId { get; private set; }**
+*The notification Queue ID:*
+public string QueueId { get; private set; }
 
 ## NotificationCenter public inteface
 
-* Occurs before a notification is posted.
-  **public event System.Action<Notification> OnBeforeNotificationPosted;**.
+*Occurs before a notification is posted:*
+public event System.Action<Notification> OnBeforeNotificationPosted;
 
-* Occurs after any notification is posted
-  **public event System.Action<Notification> OnAfterNotificationPosted;**.
+*Occurs after any notification is posted:*
+public event System.Action<Notification> OnAfterNotificationPosted;
 
-* Post a Notification.
- **public void PostNotification(Notification notification)**.
+*Post a Notification:*
+public void PostNotification(Notification notification);
 
-* Post a Notification.
-  **public void PostNotification(string name , object sender = null, Dictionary<string,object> userInfo = null, string queueId = null)**.
+*Post a Notification:*
+public void PostNotification(string name , object sender = null, Dictionary<string,object> userInfo = null, string queueId = null);
 
-* Add an observer for a specific queue.
- **public void AddObserver(INotificable obj, string queueId = null)**.
+*Add an observer for a specific queue:*
+public void AddObserver(INotificable obj, string queueId = null);
 
-* Removes an observer from a specific queue.
-**public void RemoveObserver(INotificable obj, string queueId = null)**.
+*Removes an observer from a specific queue:*
+public void RemoveObserver(INotificable obj, string queueId = null);
  
  
  
